@@ -1,0 +1,95 @@
+fileVersion: 1
+id: 482a5552-002a-41ef-af62-acb4736d2a27
+name: STG_NATION44
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f62a25fa-84f2-432c-9833-b89227bd2a10
+          stepCounter: 482a5552-002a-41ef-af62-acb4736d2a27
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_NATIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b640e97-6fd8-4d45-8cd8-5fcdbab444ee
+                stepCounter: 8470cc1a-34f8-49e5-837e-837aca1eaf88
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f0a1279-aac1-4dce-9f60-5ba68b9a59c2
+          stepCounter: 482a5552-002a-41ef-af62-acb4736d2a27
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: N_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0e8c80f5-4dbb-4364-8d87-394d416422e2
+                stepCounter: 8470cc1a-34f8-49e5-837e-837aca1eaf88
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff472c34-2d4d-491b-8564-3327f9ad6d0c
+          stepCounter: 482a5552-002a-41ef-af62-acb4736d2a27
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f8f5b554-4093-4361-a509-7a44af134c20
+                stepCounter: 8470cc1a-34f8-49e5-837e-837aca1eaf88
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01385287-f210-42ae-872b-fe6d1c2d56b4
+          stepCounter: 482a5552-002a-41ef-af62-acb4736d2a27
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: N_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d0e4c2b-63e2-4451-b77c-157d15fb8594
+                stepCounter: 8470cc1a-34f8-49e5-837e-837aca1eaf88
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: STG_NATION
+        join:
+          joinCondition: FROM {{ ref('WORK', 'STG_NATION') }} "STG_NATION"
+        name: STG_NATION1
+        noLinkRefs: []
+  name: STG_NATION44
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
