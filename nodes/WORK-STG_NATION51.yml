@@ -13,10 +13,48 @@ operation:
   description: ""
   isMultisource: false
   locationName: WORK
-  materializationType: table
+  materializationType: view
   metadata:
     appliedNodeTests: []
     columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 875f5544-762f-4f1f-a534-32a1fc3e050b
+          stepCounter: 000a9d3b-7a30-4f2e-ae03-73dcb9cb6511
+        config: {}
+        dataType: VARCHAR(4)
+        defaultValue: ""
+        description: ""
+        name: ALEX_END
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e8a4587-ef16-464f-916c-febdc3b25bf4
+          stepCounter: 000a9d3b-7a30-4f2e-ae03-73dcb9cb6511
+        config: {}
+        dataType: VARCHAR(4)
+        defaultValue: ""
+        description: ""
+        name: GREG_END
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
       - appliedColumnTests: {}
         columnReference:
           columnCounter: f62a25fa-84f2-432c-9833-b89227bd2a10
@@ -78,16 +116,30 @@ operation:
     sourceMapping:
       - aliases: {}
         customSQL:
-          customSQL: ""
+          customSQL: |-
+
+            {{ stage('Override Create SQL') }}
+                CREATE OR REPLACE VIEW {{ ref('WORK', 'STG_NATION51')}} AS (
+                    SELECT
+            {% for i in ["alex", "greg"] %}
+            '{{ i }}' as {{ i + '_END' }},
+            {% endfor %}
+            N_NATIONKEY AS N_NATIONKEY,
+            N_NAME AS N_NAME,
+            N_REGIONKEY AS N_REGIONKEY,
+            N_COMMENT AS N_COMMENT
+            FROM {{ ref('SAMPLE', 'NATION') }}
+            WHERE 1=1
+            )
         dependencies:
           - locationName: SAMPLE
             nodeName: NATION
         join:
           joinCondition: FROM {{ ref('SAMPLE', 'NATION') }} "NATION"
-        name: STG_NATION
+        name: STG_NATION51
         noLinkRefs: []
   name: STG_NATION51
-  overrideSQL: false
+  overrideSQL: true
   schema: ""
   sqlType: Stage
   type: sql
