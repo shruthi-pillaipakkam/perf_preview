@@ -3,7 +3,6 @@ id: 20b5fdc3-8305-4fed-a8dc-66b222d31d61
 name: PARTSUPP
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: SAMPLE
@@ -104,12 +103,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SAMPLE', 'PARTSUPP') }}
   name: PARTSUPP
   schema: ""
   sqlType: Source
-  table: PARTSUPP
   type: sourceInput
   version: 1
 type: Node

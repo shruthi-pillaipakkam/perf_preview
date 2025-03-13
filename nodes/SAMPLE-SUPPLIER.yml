@@ -3,7 +3,6 @@ id: 11158a77-433c-406d-b8e2-a7777749d611
 name: SUPPLIER
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: SAMPLE
@@ -142,12 +141,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SAMPLE', 'SUPPLIER') }}
   name: SUPPLIER
   schema: ""
   sqlType: Source
-  table: SUPPLIER
   type: sourceInput
   version: 1
 type: Node

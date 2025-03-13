@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
-name: STG_REGION
+id: 72f471d9-14a1-47be-8884-67c055a6f882
+name: STG_REGION1
 operation:
   config:
     insertStrategy: INSERT
@@ -19,8 +19,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 394d0a2c-4cfe-44a1-a593-7e1a2af3cd35
-          stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
+          columnCounter: c6b92e29-65a7-4db0-b285-f882f6a02c80
+          stepCounter: 72f471d9-14a1-47be-8884-67c055a6f882
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -28,13 +28,13 @@ operation:
         nullable: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: ac59073e-eef2-45e4-ba34-e76e2401b796
-                stepCounter: 47357bb2-ed0c-46f7-b0fe-e421fb5f5391
+              - columnCounter: 394d0a2c-4cfe-44a1-a593-7e1a2af3cd35
+                stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3f639a27-59c2-40e7-b0cb-15a6df899305
-          stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
+          columnCounter: 364ed8d7-1117-4c9d-8f80-9c4eecafcc28
+          stepCounter: 72f471d9-14a1-47be-8884-67c055a6f882
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -42,13 +42,13 @@ operation:
         nullable: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 1a7d00c4-8a36-437e-b637-79101a134a3e
-                stepCounter: 47357bb2-ed0c-46f7-b0fe-e421fb5f5391
+              - columnCounter: 3f639a27-59c2-40e7-b0cb-15a6df899305
+                stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0b038505-f0ea-4726-b3c0-f29f1f08c076
-          stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
+          columnCounter: fe2cda38-3bc6-4a38-994a-f6c6f52ac28f
+          stepCounter: 72f471d9-14a1-47be-8884-67c055a6f882
         config: {}
         dataType: VARCHAR(152)
         description: ""
@@ -56,28 +56,23 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 7821c675-5aab-4657-b7a0-c7025b8f3d3c
-                stepCounter: 47357bb2-ed0c-46f7-b0fe-e421fb5f5391
+              - columnCounter: 0b038505-f0ea-4726-b3c0-f29f1f08c076
+                stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
-          columnCounter: d52a1ef8-ac05-465c-86bd-3b99659e8534
-          stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
+          columnCounter: d181cbda-f92a-42ea-9b7b-6a5357697d9e
+          stepCounter: 72f471d9-14a1-47be-8884-67c055a6f882
         config: {}
         dataType: STRING
-        defaultValue: ""
         description: ""
-        hashDetails:
-          hashAlgorithm: SHA1
-        hashedColumns:
-          - columnCounter: 394d0a2c-4cfe-44a1-a593-7e1a2af3cd35
-            stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
         name: GH
         nullable: true
-        sourceColumnReferences: []
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d52a1ef8-ac05-465c-86bd-3b99659e8534
+                stepCounter: 3828fedf-86bd-4ca3-b3ed-b15049853f5b
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -85,16 +80,16 @@ operation:
         customSQL:
           customSQL: ""
         dependencies:
-          - locationName: SAMPLE
-            nodeName: REGION
+          - locationName: WORK
+            nodeName: STG_REGION
         join:
-          joinCondition: FROM {{ ref('SAMPLE', 'REGION') }} "REGION"
-        name: STG_REGION
+          joinCondition: FROM {{ ref('WORK', 'STG_REGION') }} "STG_REGION"
+        name: STG_REGION1
         noLinkRefs: []
-  name: STG_REGION
+  name: STG_REGION1
   overrideSQL: false
   schema: ""
-  sqlType: Stage
+  sqlType: testmo1018:::40
   type: sql
   version: 1
 type: Node
