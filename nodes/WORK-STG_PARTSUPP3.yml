@@ -1,0 +1,110 @@
+steps:
+  STG_PARTSUPP3-38826e47-cbb7-4b9c-9d49-20dd308feceb:
+    operation:
+      config:
+        insertStrategy: INSERT
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+        truncateBefore: true
+      database: ""
+      deployEnabled: true
+      description: ""
+      id: 38826e47-cbb7-4b9c-9d49-20dd308feceb
+      isMultisource: false
+      locationName: WORK
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: a2d64b07-e1eb-4150-9ee4-ca1c9a92e01c
+              stepCounter: 38826e47-cbb7-4b9c-9d49-20dd308feceb
+            dataType: NUMBER(38,0)
+            description: Foreign Key to P_PARTKEY
+            name: PS_PARTKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: fc8d66a2-57b6-4ae7-8448-65e74b2a8b79
+                    stepCounter: 284b3b56-c2db-4a25-ab6e-d99a2070cffd
+                transform: ""
+          - columnReference:
+              columnCounter: c727a72a-1a38-4266-9262-ea5ff49e9960
+              stepCounter: 38826e47-cbb7-4b9c-9d49-20dd308feceb
+            dataType: NUMBER(38,0)
+            description: Foreign Key to S_SUPPKEY
+            name: PS_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 00cb794d-01af-4ccb-a0a5-8a0045155404
+                    stepCounter: 284b3b56-c2db-4a25-ab6e-d99a2070cffd
+                transform: ""
+          - columnReference:
+              columnCounter: d80e1fea-f172-4c8d-94b8-29c66a9bd96e
+              stepCounter: 38826e47-cbb7-4b9c-9d49-20dd308feceb
+            dataType: NUMBER(38,0)
+            description: ""
+            name: PS_AVAILQTY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: f5bfd2c4-48f6-4d83-8a1a-681e0109eb43
+                    stepCounter: 284b3b56-c2db-4a25-ab6e-d99a2070cffd
+                transform: ""
+          - columnReference:
+              columnCounter: 41434ce7-b1e4-41a4-9f06-ad3ed91e1421
+              stepCounter: 38826e47-cbb7-4b9c-9d49-20dd308feceb
+            dataType: NUMBER(12,2)
+            description: ""
+            name: PS_SUPPLYCOST
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: b2a8465b-ce44-48c6-911d-971cd5b560ff
+                    stepCounter: 284b3b56-c2db-4a25-ab6e-d99a2070cffd
+                transform: ""
+          - columnReference:
+              columnCounter: df4950eb-f4c1-4105-9c95-8d91defcb6a4
+              stepCounter: 38826e47-cbb7-4b9c-9d49-20dd308feceb
+            dataType: VARCHAR(199)
+            description: ""
+            name: PS_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 32b1de25-f0a6-4764-85b0-3dae8e598b98
+                    stepCounter: 284b3b56-c2db-4a25-ab6e-d99a2070cffd
+                transform: ""
+          - columnReference:
+              columnCounter: 8db0617a-4791-427c-bdfd-8baa53f3e2a8
+              stepCounter: 38826e47-cbb7-4b9c-9d49-20dd308feceb
+            dataType: STRING
+            description: ""
+            name: GH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 9ff6a816-ad87-4e82-9f5c-ad4b622d0244
+                    stepCounter: 284b3b56-c2db-4a25-ab6e-d99a2070cffd
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases: {}
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: WORK
+                nodeName: STG_PARTSUPP2
+            join:
+              joinCondition: FROM {{ ref('WORK', 'STG_PARTSUPP2') }} "STG_PARTSUPP2"
+            name: STG_PARTSUPP3
+            noLinkRefs: []
+      name: STG_PARTSUPP3
+      overrideSQL: false
+      schema: ""
+      sqlType: Stage
+      type: sql
+    stepCounter: 38826e47-cbb7-4b9c-9d49-20dd308feceb
