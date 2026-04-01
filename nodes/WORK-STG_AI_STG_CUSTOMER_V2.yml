@@ -1,0 +1,152 @@
+fileVersion: 1
+id: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+name: STG_AI_STG_CUSTOMER_V2
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: stage node sourced from ai_stg_customer
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1ebb4896-0a04-4314-b210-ff74dbb0d741
+          stepCounter: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+        config: {}
+        dataType: NUMBER(38,0)
+        description: unique customer identifier / primary key. sf*150,000 are populated.
+        name: C_CUSTKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019d406f-ba5d-7122-902f-4c23439f574a
+                stepCounter: 47cdf14f-76ba-4831-952a-d8d064deedeb
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c76d750e-d0d5-4427-8c13-3e21b4af9a62
+          stepCounter: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+        config: {}
+        dataType: VARCHAR(25)
+        description: variable-length customer name in format 'Customer#000000001'.
+        name: C_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019d406f-ba5d-7122-902f-525c3a8235c3
+                stepCounter: 47cdf14f-76ba-4831-952a-d8d064deedeb
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2798927d-aca7-41ac-885e-f0362ba7d9da
+          stepCounter: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+        config: {}
+        dataType: VARCHAR(40)
+        description: mailing address of the customer.
+        name: C_ADDRESS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019d406f-ba5d-7122-902f-57926f094afb
+                stepCounter: 47cdf14f-76ba-4831-952a-d8d064deedeb
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2c34ee9d-3767-4820-bbda-bf998c96c651
+          stepCounter: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+        config: {}
+        dataType: NUMBER(38,0)
+        description: foreign key to n_nationkey in the nation table.
+        name: C_NATIONKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019d406f-ba5d-7122-902f-5b304906336e
+                stepCounter: 47cdf14f-76ba-4831-952a-d8d064deedeb
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ff79f08-b089-416a-ae7e-ee06e84d1e2b
+          stepCounter: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+        config: {}
+        dataType: VARCHAR(15)
+        description: phone number in format 'cc-aaa-bbb-cccc' where cc is the country code derived from nationkey.
+        name: C_PHONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019d406f-ba5d-7122-902f-5d118bbef0c4
+                stepCounter: 47cdf14f-76ba-4831-952a-d8d064deedeb
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f9d3c54-25fe-41c7-bbf0-f0f787a1785c
+          stepCounter: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+        config: {}
+        dataType: NUMBER(12,2)
+        description: account balance in dollars. can be negative (indicating debt) or positive (indicating credit).
+        name: C_ACCTBAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019d406f-ba5d-7122-902f-6186672b4d22
+                stepCounter: 47cdf14f-76ba-4831-952a-d8d064deedeb
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f17eb042-1c0b-4c2e-8c4e-15c000f87eba
+          stepCounter: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+        config: {}
+        dataType: VARCHAR(10)
+        description: market segment the customer belongs to (e.g., automobile, building, furniture, machinery, household).
+        name: C_MKTSEGMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019d406f-ba5d-7122-902f-66c241b1a9af
+                stepCounter: 47cdf14f-76ba-4831-952a-d8d064deedeb
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e31b99a5-3c14-45da-b096-39890330349e
+          stepCounter: 44095f3b-3bd4-4e05-82fd-7483a8c0a8ec
+        config: {}
+        dataType: VARCHAR(117)
+        description: free-form text comment about the customer.
+        name: C_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019d406f-ba5d-7122-902f-6b9c1f3a1bea
+                stepCounter: 47cdf14f-76ba-4831-952a-d8d064deedeb
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          AI_STG_CUSTOMER_V2: 47cdf14f-76ba-4831-952a-d8d064deedeb
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: AI_STG_CUSTOMER_V2
+        join:
+          joinCondition: FROM {{ ref('WORK', 'AI_STG_CUSTOMER_V2') }} "AI_STG_CUSTOMER_V2"
+        name: STG_AI_STG_CUSTOMER_V2
+        noLinkRefs: []
+  name: STG_AI_STG_CUSTOMER_V2
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
