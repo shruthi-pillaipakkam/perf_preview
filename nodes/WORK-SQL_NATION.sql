@@ -1,8 +1,4 @@
-@id("055595c2-96b6-4d61-9761-4a98663464aa")
+@id("9f746116-230a-4478-8202-c20e3ba4a84b")
 @nodeType("49")
-SELECT
-     "N_NATIONKEY" AS "N_NATIONKEY",
-     "N_NAME" AS "N_NAME",
-     "N_REGIONKEY" AS "N_REGIONKEY",
-     "N_COMMENT" AS "N_COMMENT"
-FROM {{ ref('SAMPLE', 'NATION') }} "NATION"
+SELECT nation.n_nationkey
+FROM {{ ref('SAMPLE', 'NATION') }}

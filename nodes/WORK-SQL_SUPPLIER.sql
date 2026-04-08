@@ -1,11 +1,4 @@
 @id("e44ecbb5-a73d-4a22-9072-bab18989619f")
 @nodeType("49")
-SELECT
-     "S_SUPPKEY" AS "S_SUPPKEY",
-     "S_NAME" AS "S_NAME",
-     "S_ADDRESS" AS "S_ADDRESS",
-     "S_NATIONKEY" AS "S_NATIONKEY",
-     "S_PHONE" AS "S_PHONE",
-     "S_ACCTBAL" AS "S_ACCTBAL",
-     "S_COMMENT" AS "S_COMMENT"
+SELECT *
 FROM {{ ref('SAMPLE', 'SUPPLIER') }} "SUPPLIER"
